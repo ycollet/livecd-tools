@@ -142,9 +142,9 @@ def resize2fs(fs, size=None, minimal=False, ops=''):
 
     if ops != 'nocheck':
         ret = e2fsck(fs)
-        if ret != 0:
-            raise ResizeError("fsck after resize returned an error (%d)!" %
-                              (ret,))
+        #if ret != 0:
+        #    raise ResizeError("fsck after resize returned an error (%d)!" %
+        #                      (ret,))
 
     return 0
 
