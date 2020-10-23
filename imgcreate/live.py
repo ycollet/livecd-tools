@@ -488,6 +488,9 @@ class x86LiveImageCreator(LiveImageCreatorBase):
         return (is_xen, isDracut)
 
     def __is_default_kernel(self, kernel, kernels):
+        if kernel.startswith(b"kernel-rt"):
+            return False
+        
         if len(kernels) == 1:
             return True
 
